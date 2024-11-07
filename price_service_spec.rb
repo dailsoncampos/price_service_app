@@ -22,10 +22,18 @@ RSpec.describe PriceService do
     end
   end
 
-  context 'when product belongs to food or beverages category' do
+  context 'when product belongs to food category' do
     let(:product) { { id: 1, base_price: 100, tax_percentage: 10, category: 'food' } }
 
     it 'applies a 5% discount for food category' do
+      expect(call).to eq(104.5)
+    end
+  end
+
+  context 'when product belongs to beverages category' do
+    let(:product) { { id: 1, base_price: 100, tax_percentage: 10, category: 'beverages' } }
+
+    it 'applies a 5% discount for beverages category' do
       expect(call).to eq(104.5)
     end
   end
