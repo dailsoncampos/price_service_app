@@ -41,11 +41,14 @@ puts total_price # Exibe o preço total após aplicar taxas e descontos
 
 ## Instalando e configuração com Docker
 
-Para facilitar o uso e garantir consistência no ambiente de desenvolvimento e execução, você pode utilizar Docker para rodar a aplicação e os testes. Siga as instruções abaixo:
+  Para facilitar o uso e garantir consistência no ambiente de desenvolvimento e execução, você pode utilizar Docker para rodar a aplicação e os testes. Siga as instruções abaixo:
 
 1. Pré-requisitos
+
 Docker instalado na sua máquina.
+
 2. Clonar o Repositório
+
 Primeiro, clone este repositório para sua máquina local:
 
 ```bash
@@ -54,13 +57,17 @@ cd price_service_app
 ```
 
 3. Construir a imagem Docker
+
 No diretório do projeto, crie a imagem Docker:
+
 ```bash
 docker build -t price_service_app .
 ```
 
 4. Executar a Aplicação
+
 Para iniciar um contêiner e rodar a aplicação, use o comando:
+
 ```bash
 docker run -it price_service_app
 ```
@@ -68,13 +75,17 @@ docker run -it price_service_app
 ### Testando a Aplicação
 
 1. Rodar os Testes
+
 Para rodar os testes com o RSpec no ambiente Docker, execute o seguinte comando:
+
 ```bash
 docker run -it price_service_app rspec
 ```
 
 2. Testes Específicos (Opcional)
+
 Para rodar testes específicos, você pode passar o caminho do arquivo de teste:
+
 ```bash
 docker run -it price_service_app rspec price_service_spec.rb --format doc
 ```
